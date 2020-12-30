@@ -1,2 +1,5 @@
 <h1 align="center"><a href="#">CorruptionFreeIndia</a></h1>
-It is an awareness and an informative tool that educates users about various anti-corruption laws and regulations , initiatives taken against corruption and where and whom to report against corruption.
+Team project for <b>Code Against Corruption Hackathon</b>.
+
+<h3><a href="#">Theme</a></h3>
+Build awareness and an easily accessible tool that educates users about various anti-corruption laws and regulations. This forum should act as a content curator platform that displays anti-corruption initiatives (globally and regionally), citizens’ rights on reporting incidences of petty/grand corruption, and ways to hold authorities accountable for such acts.

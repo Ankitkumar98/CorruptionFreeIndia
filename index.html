@@ -64,6 +64,20 @@
         </section>
         <aside class="right">
             <div class="titles">
+                <div class="buttons">
+                    <button class="blob-btn">
+                      Enable Dark Mode
+                      <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                        </span>
+                      </span>
+                    </button>
+                    <br />
+                </div>
                 <ul>
                     <li>Anti-Corruption Laws</li>
                     <li>Link 2</li>
@@ -72,22 +86,42 @@
                     <li>Link 5</li>
                 </ul>
             </div>
-            <hr>
+            <hr width="50%">
             <div class="videos">
                 <ul>
-                    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/QD6qv8AFzHw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/QD6qv8AFzHw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                    <li><iframe width="560" height="315" src="https://www.youtube.com/embed/QD6qv8AFzHw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                    <li><iframe src="https://www.youtube.com/embed/QD6qv8AFzHw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                    <li><iframe src="https://www.youtube.com/embed/QD6qv8AFzHw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                    <li><iframe src="https://www.youtube.com/embed/QD6qv8AFzHw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
                 </ul>
             </div>
         </aside>
     </div>
 
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              result="blur"
+              stdDeviation="10"
+            ></feGaussianBlur>
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
+              result="goo"
+            ></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+
     <div class="bottom_section">
         <footer class="footer">
             <div class="footer-left">
-                <img src="./static/dark-removebg-preview.png" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac ligula vitae erat faucibus posuere pharetra at felis. Vestibulum sed ante fringilla.</p>
+                <img src="./static/Footbar_Logo.png" alt="">
+                <p><b>CorruptionFreeIndia</b> builds awareness and is an easily accessible tool that educates users about various anti-corruption laws and regulations. This forum should act as a content curator platform that displays anti-corruption initiatives
+                    (globally and regionally), citizens’ rights on reporting incidences of petty/grand corruption, and ways to hold authorities accountable for such acts.</p>
                 <!-- <div class="socials">
                     <a href="#">Fb</a>
                     <a href="#">Fb</a>
@@ -135,7 +169,6 @@
                 <p>All Right reserved by &copy;CorruptionFreeIndia 2020</p>
             </div>
         </footer>
-
     </div>
 
 

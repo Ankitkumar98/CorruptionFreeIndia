@@ -7,24 +7,26 @@ body {
     padding: 10px;
     text-align: center;
     font-family: arial, sans-serif;
+    background: #E6E6E6;
 }
 
 .bottom_section {
     padding: 4%;
     background: #011c39;
     color: white;
+    margin-top: 0;
 }
 
 section {
     width: 50%;
     float: left;
-    background: grey;
+    /* background: grey; */
 }
 
 .right {
     width: 45%;
     float: left;
-    background: red;
+    /* background: red; */
     margin: 2% 2%;
 }
 
@@ -37,10 +39,15 @@ section {
 
 .titles {
     padding: 5% 0%;
+    font-weight: 600;
+    font-size: 30px;
+    color: #011c39;
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.1);
 }
 
 .videos {
     padding: 5% 0%;
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.1);
 }
 
 .link {
@@ -72,7 +79,7 @@ section {
 }
 
 iframe {
-    width: 100%;
+    width: 70%;
     height: 30%;
     padding-right: 5%;
     padding-bottom: 2%;
@@ -82,7 +89,11 @@ li {
     list-style: none;
 }
 
+
+/* FOOTER */
+
 footer {
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.1);
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -105,6 +116,14 @@ footer {
 
 .footer-left img {
     width: 50%;
+}
+
+.footer-left b {
+    color: orange;
+}
+
+.footer h2 {
+    color: orange;
 }
 
 h2 {
@@ -145,8 +164,8 @@ h2 {
 
 .footer-bottom {
     text-align: center;
-    color: #999;
-    padding-top: 50px;
+    color: orange;
+    padding-top: 10px;
 }
 
 .footer-left p {
@@ -169,5 +188,126 @@ h2 {
 @media (max-width: 600px) {
     .footer {
         padding: 15px;
+    }
+}
+
+
+/* BUTTONS */
+
+.buttons {
+    text-align: center;
+}
+
+.blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+.blob-btn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 6px solid #011c39;
+}
+
+.blob-btn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    width: 100%;
+    height: 100%;
+    border: 6px solid #222;
+    transition: all 0.3s 0.2s;
+}
+
+.blob-btn:hover {
+    color: white;
+}
+
+.blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+}
+
+.blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url("#goo");
+}
+
+.blob-btn__blob {
+    position: absolute;
+    top: 6px;
+    width: 25%;
+    height: 100%;
+    background: #011c39;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+}
+
+@supports (filter: url("#goo")) {
+    .blob-btn__blob {
+        transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+}
+
+.blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+}
+
+.blob-btn__blob:nth-child(2) {
+    left: 30%;
+    transition-delay: 0.08s;
+}
+
+.blob-btn__blob:nth-child(3) {
+    left: 60%;
+    transition-delay: 0.16s;
+}
+
+.blob-btn__blob:nth-child(4) {
+    left: 90%;
+    transition-delay: 0.24s;
+}
+
+.blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+}
+
+@supports (filter: url("#goo")) {
+    .blob-btn:hover .blob-btn__blob {
+        transform: translateZ(0) scale(1.4);
     }
 }

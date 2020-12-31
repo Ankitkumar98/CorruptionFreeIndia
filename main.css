@@ -45,6 +45,11 @@ section {
     box-shadow: 0 7px 17px rgba(0, 0, 0, 0.1);
 }
 
+.titles a {
+    text-decoration: none;
+    color: #011c39;
+}
+
 .videos {
     padding: 5% 0%;
     box-shadow: 0 7px 17px rgba(0, 0, 0, 0.1);
@@ -52,6 +57,7 @@ section {
 
 .link {
     padding: 5% 3%;
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.1);
 }
 
 .img1 {

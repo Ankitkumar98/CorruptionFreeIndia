@@ -147,6 +147,7 @@ iframe {
     height: 30%;
     padding-right: 5%;
     padding-bottom: 2%;
+    border-radius: 12px;
 }
 
 li {

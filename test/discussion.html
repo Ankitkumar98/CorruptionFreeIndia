@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./discussion.css" type="text/css">
+    <title>Discussion</title>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">CorruptionFreeIndia</label>
+        <!-- <?php
+            if(isset($_SESSION['usermail']))
+            {
+                $username = $_SESSION['username'];
+                echo '<ul>
+                    <li><a class="active" href="./index.html">Home</a></li>
+                    <li><a href="./signin.php">SignOut</a></li>
+                    <li>Welcome'.$username.'</li>
+                    <li><a href="https://github.com/Ankitkumar98/DIGIBADGE">Contact</a></li>
+                </ul>';
+            }
+            else
+            {
+            echo '<ul>
+                    <li><a class="active" href="./index.html">Home</a></li>
+                    <li><a id="sign" style="cursor:pointer;">SignIn/SignUp</a></li>
+                    <li><a href="https://github.com/Ankitkumar98/DIGIBADGE">Contact</a></li>
+                </ul>';
+            }
+        ?> -->
+        
+        <ul>
+            <li><a class="active" href="./index.html">Home</a></li>
+            <li><a id="sign" style="cursor:pointer;">SignIn/SignUp</a></li>
+            <li><a href="https://github.com/Ankitkumar98/DIGIBADGE">Contact</a></li>
+        </ul>
+
+    </nav>
+
+<!-- sign-in/sign-up code -->
+<div id="bg-modal" style="
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display:none;
+">
+    <div id="close" style="
+        cursor: pointer;
+        font-weight: bolder;
+        font-size: 40px;
+        position:absolute;
+        right:16px;
+        top:8px;
+        color:red;
+        transform: rotate(45deg);
+    ">+</div>
+    <div id="prizes">
+        <ul>
+            <li><a href="#tab-1">signin</a></li>
+            <li><a href="#tab-2">register</a></li>  
+        </ul>
+        
+        <div id="tab-1">
+            <div class="center">
+                <div class="login_center">
+                    <h1>Login</h1>
+                    <form method="POST" action="./userlogin.php">
+                        <div class="login_txt_field">
+                            <input type="email" name="login_email" required />
+                            <span></span>
+                            <label>Email</label>
+                        </div>
+                        <div class="login_txt_field">
+                            <input type="password" name="login_pw" required />
+                            <span></span>
+                            <label>Password</label>
+                        </div>
+                        <div class="login_pass">Forgot Password ?</div>
+                        <input type="submit" name="login_submit" value="Login" />
+                        <div class="login_signup_link">Not a member ? <a href="#tab-2">Signup</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="tab-2">
+            <div class="center">
+                <div class="register_center">
+                    <h1>Register</h1>
+                    <form method="POST" action="./user-registration.php">
+                        <div class="register_txt_field">
+                            <input type="text" name="register_name" required />
+                            <span></span>
+                            <label>Full Name</label>
+                        </div>
+                        <div class="register_txt_field">
+                            <input type="password" name="register_pw" required />
+                            <span></span>
+                            <label>Password</label>
+                        </div>
+                        <div class="register_txt_field">
+                            <input type="email" name="register_email" required />
+                            <span></span>
+                            <label>Email</label>
+                        </div>
+                        <div class="register_txt_field">
+                            <input type="date" name="register_dob" required placeholder="Date of Birth" />
+                            <span></span>
+                        </div>
+                        <div class="register_signup_link">Already a member ? <a href="#tab-1">Login</a></div>
+                        <input type="submit" name="register_submit" value="Register" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="jumbotron"> 
+        <div class="jumbotron-content">
+            <h1 class="jumbotron-title">title</h1>
+            <h4 class="jumbotron-title-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corrupti cupiditate praesentium
+                esse nobis harum repudiandae ipsa quidem perferendis. Reiciendis impedit vero ab sequi ea hic repellat quas velit.
+                Hic voluptatum minima pariatur placeat veritatis et expedita eveniet nemo maxime, aliquid sit quos ab quae facere
+                alias, numquam nisi eligendi ut magnam repudiandae est aperiam?
+            </h4>
+            <button class="ask-btn" disabled="disabled"><a id="ask">Ask a Question</a></button>
+        </div>
+    </div>
+
+    <div class="search-sort">
+        <!-- <?php
+            $query = 'SELECT thread_id FROM threads';
+            $queryResult = mysqli_query($dbc,$query);
+            $countQuestions =mysqli_num_rows($queryResult);
+        ?> -->
+        <div class="numQuestions">
+            <p>Total no. of Questions : <?php echo $countQuestions ?></p>
+        </div>
+        
+        <div class="search">
+            <label for="search-ques">Search : </label>
+            <input type="text" name="search-ques" length="500">
+        </div>
+
+        <div class="sort">
+            <label for="sort-ques">Sort : </label>
+            <select name="sort-type" id="sort-type">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="user" style="
+                            display:inline-block;
+                            width:10%;
+                            float:left;
+                            height:100px;
+                            padding-left:20px;
+                        "> 
+                        <img src="../image/user.svg" width="50" height="50"alt="user"> <br>
+                        <label for="username" style="padding-left:10px;">User</label>
+    </div>
+
+    <div class="questionDescription" style="
+                        width: 90%;
+                        height:100px;
+                        float: right;
+                        padding-top: 10px;   
+                    ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe in sapiente recusandae animi illo qui vitae, ipsa quis optio iste non, libero necessitatibus veritatis placeat a, dicta amet laboriosam. Inventore provident, id repudiandae, dolore maiores a dignissimos laborum corrupti eaque architecto ducimus, numquam ex officiis fugit animi optio harum assumenda.
+    </div>
+    <hr style="
+                width:85%;
+                height:5%;
+                margin-left:10%;
+                margin-top:15px;
+            ">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias sit omnis ducimus deserunt voluptatum ad eveniet perferendis a fuga corrupti cupiditate cum, dolore similique, provident unde dolores impedit vitae atque aspernatur voluptate enim earum suscipit libero? Perspiciatis quia, pariatur sint obcaecati nobis tempore odio voluptatibus officia ipsam laboriosam mollitia? Non voluptates voluptatum consequatur voluptatibus officiis nemo optio voluptate commodi blanditiis, officia ipsam suscipit ipsa obcaecati delectus aliquam inventore nisi, facere cupiditate cum debitis vitae fuga? Corrupti nihil accusantium laborum veritatis eveniet nam mollitia, dolorum tempore tempora consequuntur sit voluptatem sint doloribus commodi dolor eos obcaecati qui assumenda. Dolore voluptates corrupti nesciunt distinctio numquam molestiae sunt magnam, dolorum laudantium accusamus suscipit culpa eaque ea, aliquam commodi esse quod. Tempore, eius vel nostrum nulla quisquam aperiam cumque odit magnam. Vel nesciunt esse blanditiis et temporibus porro praesentium quaerat libero maiores distinctio. Reiciendis labore eos, voluptatibus animi vero obcaecati sequi quibusdam, fugiat et assumenda beatae maiores, qui exercitationem debitis odio illo dolorem natus tempora mollitia deleniti suscipit a magnam voluptas quos. Quae ad laudantium dolores voluptas eum iste quibusdam debitis cupiditate repellendus sint culpa officiis provident, ducimus eius ipsum necessitatibus. Impedit saepe adipisci quaerat, quibusdam repellendus culpa quo, commodi facilis quis illo ipsum laboriosam laborum aperiam ipsa beatae dolore nulla eum deserunt error incidunt! Labore veniam consectetur nesciunt quo earum at corrupti quasi quidem non aliquid dolores voluptatibus neque, deleniti placeat qui, ex exercitationem, reiciendis impedit dolorum reprehenderit. Ut corporis velit aperiam, commodi distinctio numquam eligendi nisi molestiae molestias. Vitae reprehenderit rem repellendus laudantium fugiat quia commodi hic, quas maiores atque? Enim dolor culpa, quae hic porro consequatur. Quae illum error quia, nulla, ullam a amet sapiente perspiciatis aperiam odit ipsum temporibus dolore unde aliquam quas non et eveniet eligendi inventore quam culpa? Voluptate in accusantium iure placeat vel odit, nisi reiciendis commodi tempora aut harum alias expedita, ipsum a optio rerum dignissimos soluta modi natus quia facere molestiae delectus aliquid. Eligendi quasi minus sint recusandae dignissimos velit doloribus laboriosam assumenda saepe! Ullam soluta sit corporis facere? Ipsa explicabo, iste aliquam dicta in voluptatibus libero quo at officiis eos sed magnam quisquam nobis sequi debitis aperiam quae beatae, veniam cumque rem, quod mollitia fugiat recusandae ab. Iste accusamus delectus dolore error consequuntur repellat dicta recusandae velit, nisi illo dignissimos reprehenderit corrupti sed ratione ipsa assumenda odio doloribus, quis adipisci magni vel illum? Ab ullam aut laudantium soluta quod eos voluptas quas at. Ex odit animi praesentium quia cupiditate iusto minima facilis placeat voluptate! At, aspernatur assumenda beatae dignissimos, alias consectetur sint dicta, consequatur quam praesentium repellat veritatis? Consequatur impedit sint quisquam in est sit, vitae voluptatibus voluptate rem aspernatur accusantium dolorem pariatur nobis alias repudiandae perspiciatis optio praesentium deserunt. Sit aliquid ipsum cupiditate porro quod officiis modi? Vel, expedita aliquam sunt delectus qui ad voluptates obcaecati ipsa saepe placeat tempore veritatis. Itaque, voluptate minus. Quaerat perspiciatis atque repudiandae, labore aspernatur illum dolores, illo nulla similique minima libero, consequuntur quam mollitia ipsam quos cum! Voluptates quae, magnam vero laudantium quis temporibus, accusantium accusamus iure maxime reiciendis ratione, eum cum harum? Facilis provident porro repellat molestias, quae maxime, cum, impedit soluta ea atque veritatis fugit! Saepe doloremque corrupti soluta dolore facilis nemo commodi excepturi, temporibus est nesciunt unde itaque fuga animi inventore pariatur non at illo sint, voluptatem dolorem minima iure minus. Molestiae aliquam quam nisi ipsa optio veritatis officiis et eum! Adipisci, sed, voluptates autem quo consequuntur, vitae itaque debitis et explicabo eligendi deserunt. Deserunt aspernatur commodi ipsum! Est sunt, minus modi eos dolores ipsa voluptas hic illum numquam tempore omnis laudantium officia, consequatur autem odio asperiores reprehenderit culpa. Architecto nesciunt enim repellat porro, est perferendis eligendi labore in quod, laboriosam eius non sit asperiores molestiae laborum, praesentium consequuntur animi deserunt! Beatae, laborum illum voluptate dicta a dolorem hic atque voluptatibus necessitatibus adipisci placeat minus molestias voluptatum aliquam vero asperiores sapiente porro excepturi officiis. Quam, nisi animi placeat vero eveniet architecto voluptates vitae autem id rem accusantium corrupti ullam officia in iste non et ipsam beatae expedita rerum! Similique deserunt odio odit vero! Fugit pariatur dolore voluptates iusto sint dolorum dolores iure quod vitae error! Ea eveniet necessitatibus ullam eaque odio corporis velit reprehenderit, voluptatibus earum ratione laboriosam cupiditate aliquam voluptas ipsum provident explicabo sequi, aliquid deserunt id quia quam adipisci. Reiciendis accusamus deserunt iure, beatae maxime necessitatibus rem ab quas porro. Veritatis molestiae ea veniam illum corrupti cupiditate quasi dignissimos modi suscipit dolores cumque, ad quibusdam consequuntur, odit perferendis beatae facere obcaecati, est perspiciatis quis. Ullam delectus error, incidunt nostrum, doloribus eveniet voluptatem voluptate, corrupti exercitationem nihil provident cum numquam illum a reprehenderit perspiciatis? Aspernatur exercitationem possimus deleniti voluptatibus animi cum soluta? Dolores libero minus quo nulla dicta quam incidunt, eius qui repudiandae velit adipisci, nesciunt, voluptate laudantium! Eligendi ratione nostrum vero omnis, nam modi voluptatum molestias beatae similique aut, voluptas totam qui iusto et ullam quis. Facilis ratione dolorem suscipit fugiat? Praesentium at ex esse neque corporis, eius suscipit. Odio quos explicabo fuga sint minus temporibus quis aperiam amet aliquid autem, eius ipsa porro iste est possimus dolorum magnam? Vitae aut qui cum impedit aspernatur repudiandae repellendus rem perferendis nisi? Doloremque a harum modi dolore sunt, quo eveniet libero illum sed! Culpa, incidunt corporis qui, est esse non nesciunt voluptates beatae commodi omnis consequatur provident saepe ratione! Molestiae labore harum nisi, distinctio ut, maiores magnam ea vero, odio accusantium corrupti voluptate nesciunt! Natus, dolorem. Quam voluptatibus molestiae id autem, laudantium obcaecati inventore facere, pariatur aliquam in consectetur laborum temporibus velit cumque vitae cum fuga repellat sint. Aut, eaque fugit? Tenetur assumenda saepe deleniti dolorem quaerat quae, laudantium sit? Harum aliquid iste animi magnam consequuntur odio explicabo deserunt ducimus neque! Quasi hic, esse ipsam explicabo natus error eaque consectetur nobis totam accusantium ea odit non quidem adipisci a aperiam ab corrupti iure minima earum eius excepturi. Pariatur dignissimos vero autem excepturi omnis est provident obcaecati ipsum mollitia libero id voluptatibus commodi, natus rerum explicabo iusto blanditiis in, voluptates nesciunt suscipit asperiores eos? Libero officiis sequi nostrum quo cumque illum consequatur nulla reprehenderit?
+
+    </p> -->
+</main>
+
+</body>
+<script src="./jquery-3.4.1.min.js"></script>
+<script src="./jquery-ui.min.js"></script>
+<script src="./discussion.js"></script>
+</html>
+

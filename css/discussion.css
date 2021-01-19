@@ -1,0 +1,84 @@
+/* jumbotron style */
+
+.jumbotron{
+    background-image: url('../image/book_diary_bookmark_111541_1280x720.jpg');
+    height:500px;
+    width:1280px;
+}
+
+.content{
+    position: sticky;
+    justify-content: center;
+    text-align: center;
+    /* margin-left:40%; */
+    padding-top:200px; 
+    background-color: rgba(0,0,0,0.4);
+    height:500px;
+    width:1280px;
+}
+
+.title , .title-description{
+    color:white;
+    text-transform: capitalize;
+} 
+
+.btn{
+    margin-top:40px;
+    height:40px;
+    width:10%;
+    border-radius:10px;
+    border:none;
+    background-color: aqua;
+    cursor: pointer;
+}
+
+/* search and sort style */
+
+.search-sort{
+    background-color:rgb(173, 169, 169);
+}
+.search{
+    display: inline-block;
+    width:40%;
+    height:20%;
+    float : left;
+    padding : 15px 0px 15px 100px;
+}
+
+.sort{
+    width: 30%;
+    float:right;
+    padding-top: 15px;
+    padding-left:150px;
+}
+
+
+
+.numQuestions{
+    display:inline-block;
+    float :left;
+    width:30%;
+    padding-top:15px;
+    padding-left:15px; 
+}
+
+/* questions styling */
+
+.user{
+    display:inline-block;
+    width:10%;
+    float:left;
+    height:100px;
+    padding-left:20px;
+}
+
+.questionDescription{
+    /* display: right; */
+    width:90%;
+    float:right;
+}
+
+.userResponse{
+    padding-left:130px;
+    padding-top:20px;
+}

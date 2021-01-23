@@ -1,5 +1,7 @@
 <?php
 require_once('dbconnect.php');
+$source = $_GET['location'];
+
 
 if(isset($_POST['register_submit']))
 {
@@ -26,13 +28,17 @@ if(isset($_POST['register_submit']))
             $register_result=mysqli_query($dbc,$register_query) or die("error in registering user");
             echo 'registration sucessfull';
             mysqli_close($dbc);
-            header("refresh: 5; url=http://localhost/corruption/signin.php");
+            // header("refresh: 5; url=http://localhost/corruption/signin.php");
+            $home_url = 'http://' . $_SERVER['HTTP_HOST'] . $source;
+            header('refresh: 0; url='.$home_url);
         }
         else
         {
             echo 'email id is already registered';
             mysqli_close($dbc);
-            header("refresh: 5; url=http://localhost/corruption/signup.php");
+            // header("refresh: 5; url=http://localhost/corruption/signup.php");
+            $home_url = 'http://' . $_SERVER['HTTP_HOST'] . $source;
+            header('refresh: 0; url='.$home_url);
 
         }
         
@@ -40,7 +46,9 @@ if(isset($_POST['register_submit']))
     else{
         echo 'please enter details properly';
         mysqli_close($dbc);
-        header("refresh: 5; url=http://localhost/corruption/signup.php");
+        //header("refresh: 5; url=http://localhost/corruption/signup.php");
+        $home_url = 'http://' . $_SERVER['HTTP_HOST'] . $source;
+        header('refresh: 0; url='.$home_url);
         
     }
     

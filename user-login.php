@@ -31,7 +31,7 @@ if(!isset($_SESSION['user_mail']))
                     </script>';
                     $home_url = 'http://' . $_SERVER['HTTP_HOST'] . $source;
                     //header('refresh: 5; url=http://localhost/corruption/discussion.php');
-                    header('refresh: 5; url='.$home_url);
+                    header('refresh: 0; url='.$home_url);
                 }
                 else{
                     echo 'invalid password please login again';
@@ -41,7 +41,7 @@ if(!isset($_SESSION['user_mail']))
             {
                 echo 'login unsuccessfull please enter details properly';
                 $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/signin.php';
-                header('refresh: 5; url='.$home_url);
+                header('refresh: 0; url='.$home_url);
             }
         }
         else{

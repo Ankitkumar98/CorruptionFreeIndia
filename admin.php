@@ -29,13 +29,13 @@
                 mysqli_query($dbc,$delete_query) or die("error in deleting post");
                 echo 'post removed sucessfully';
                 $admin_url = 'http://'. $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/admin.php';
-                header('refresh: 5; url='.$admin_url);
+                header('refresh: 0; url='.$admin_url);
             }
             else
             {
                 echo "error in deleting post";
                 $admin_url = 'http://'. $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/admin.php';
-                header('refresh: 5; url='.$admin_url);
+                header('refresh: 0; url='.$admin_url);
             }
             
             while($row = mysqli_fetch_array($result))

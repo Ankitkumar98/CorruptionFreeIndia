@@ -1,6 +1,22 @@
 <?php
     session_start();
     require_once('dbconnect.php');
+    if(isset($_SESSION['usermail']))
+    {
+        $email = $_SESSION['usermail'];
+        $user_query = "SELECT * FROM user WHERE user_email ='$email'";
+        $user_query_result = mysqli_query($dbc,$user_query) or die("unable to fetch user details from database");
+        $row_user = mysqli_fetch_array($user_query_result);
+        $userid = $row_user['user_id'];
+        if(isset($_GET['questionTitle']) && isset($_GET['questionDescription']))
+        {
+            $threadtitle = mysqli_real_escape_string($dbc,trim($_GET['questionTitle']));
+            $threaddesc = mysqli_real_escape_string($dbc,trim($_GET['questionDescription']));
+            $insert_query = "INSERT INTO threads(`thread_title`,`thread_desc`,`thread_user_id`,`thread_category`) VALUES('$threadtitle','$threaddesc','$userid',1)";
+            mysqli_query($dbc,$insert_query) or die("error in posting query");
+            echo 'post successfull';
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,11 +49,17 @@
         <div class="jumbotron"> 
             <div class="jumbotron_img"><img src="https://images.wallpaperscraft.com/image/books_library_old_111388_3840x2400.jpg" width="1865px" height="500px" alt=""></div>
             <div class="content">
-                <h1 class="title">title</h1>
-                <h4 class="title-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corrupti cupiditate praesentium
-                    esse nobis harum repudiandae ipsa quidem perferendis. Reiciendis impedit vero ab sequi ea hic repellat quas velit.
-                    Hic voluptatum minima pariatur placeat veritatis et expedita eveniet nemo maxime, aliquid sit quos ab quae facere
-                    alias, numquam nisi eligendi ut magnam repudiandae est aperiam?
+                <h1 class="title">Feel free to Discuss here...</h1>
+                <h4 class="title-description">
+                    <ul>
+                        <li>Introduce yourself.</li>
+                        <li>Introduce yourself.</li>
+                        <li>Be intellectually rigorous.</li>
+                        <li>Forgive other's mistakes.</li>
+                        <li>Read the whole thread before posting.</li>
+                        <li>Maintain confidentiality.</li>
+                        <li>Utilize a netiquette policy.</li>
+                    </ul>
                 </h4>
                 <button class="btn"><a href="#askQuestionForm">Ask a Question</a></button>
             </div>
@@ -55,8 +77,10 @@
             
             <div class="search">
                 <label for="search-ques"><span class="barTitle">Search : </span></label>
-                <input type="text" name="search-ques" length="500" style="padding:1%;font-size:18px;border:none;border-bottom:2px solid grey;outline:none;">
-                <button class="btnSearch">Search</button>
+                <form action="./search.php" method="get">
+                    <input type="text" name="search" length="500" style="padding:1%;font-size:18px;border:none;border-bottom:2px solid grey;outline:none;">
+                    <button class="btnSearch" type="submit">Search</button>
+                </form>
             </div>
     
             <div class="sort">
@@ -66,15 +90,7 @@
                     <option value="oldest">Oldest First</option>
                 </select>
             </div>
-        </div>
-
-        <!-- <div class="askQuestion" id="ask-question">
-            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="askQuestion">
-                <textarea name="question" id="doubt" cols="30" rows="10"></textarea>
-                <input type="submit" id="submit-form" value="POST" name="submit">
-            </form>
-        </div> -->
-        
+        </div>        
 
         <?php
             $query = 'SELECT * FROM threads';
@@ -102,7 +118,7 @@
         ?>
         
         <div class="askQuestionForm" id="askQuestionForm">
-            <form action="#">
+            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
                 <label class="questionTitleLabel" for="questionTitle">Question Title</label>
                 <input class="questionTitleBox" type="text" id="questionTitle" name="questionTitle" placeholder="Question Title ...">
 
@@ -127,10 +143,10 @@
                     <ul class="box">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="corruption_laws.html">Corruption Laws In India</a></li>
-                        <li><a href="initiatives_globally.html">Anti-Corruption Initiatives (Globally)</a></li>
-                        <li><a href="initiatives_regionally.html">Anti-Corruption Initiatives (Regionally)</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 5</a></li>
+                        <li><a href="initiatives_globally.html">Anti-Corruption Initiatives</a></li>
+                        <!-- <li><a href="initiatives_regionally.html">Anti-Corruption Initiatives (Regionally)</a></li> -->
+                        <li><a href="complaint_against_corrupt.html">How to file a complaint against the corrupt</a></li>
+                        <li><a href="http://localhost/corruption/discussion.php">Discussion Forum</a></li>
                     </ul>
                 </li>
                 <li class="features">

@@ -123,10 +123,10 @@
                                                 <div class="userDescription" style="display: table-cell;line-height: 1.7em;padding-left:5%;font-size: 18px;">';
                                                     echo  '<label class="userThreadLabel" for="quesTitle"> '.$comment_row['comment_desc'].'</label><br/>
                                                             <p style="display:inline-block;float:left;margin-right:30px;">
-                                                                <a href="./updateresponse.php?response=1&commid='.$comment_row['comment_id'].'"><img class="like" src="./image/like.png" alt="like" width="25" height="25" ></a>'.$comment_row['comment_likes'].'
-                                                                <a href="./updateresponse.php?response=0&commid='.$comment_row['comment_id'].'"><img class="dislike" src="./image/dislike.png" alt="dislike"  width="25" height="25" ></a>'.$comment_row['comment_dislikes'].'
+                                                                <a href="./updateresponse.php?response=1&commid='.$comment_row['comment_id'].'&amp location='. urlencode($_SERVER['REQUEST_URI'])  .'"><img class="like" src="./image/like.png" alt="like" width="25" height="25" ></a>'.$comment_row['comment_likes'].'
+                                                                <a href="./updateresponse.php?response=0&commid='.$comment_row['comment_id'].'&amp location='. urlencode($_SERVER['REQUEST_URI'])  .'"><img class="dislike" src="./image/dislike.png" alt="dislike"  width="25" height="25" ></a>'.$comment_row['comment_dislikes'].'
                                                             </p>
-                                                            <p style="display:inline-block;float:left;"><b>Asked on '.$row['thread_date'].'</b> </p>
+                                                            <p style="display:inline-block;float:left;"><b>Answered on '.$date.' at time '.$time.'</b> </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -153,6 +153,13 @@
                 
                 echo '<hr style="width:96%;margin-left:2%;margin-top:15px;margin-bottom:10px;">';
             ?>
+            <div class="videos">
+                <ul>
+                    <li><iframe width="500" height="315" src="https://www.youtube.com/embed/vOtxP-qqR0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                    <li><iframe width="500" height="315" src="https://www.youtube.com/embed/IjjTNMeC0MQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                    <li><iframe width="500" height="315" src="https://www.youtube.com/embed/rDA6ydWqdlc?start=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                </ul>
+            </div>
         </div>   
     
 </body>

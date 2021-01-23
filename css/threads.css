@@ -92,3 +92,19 @@ input {
     font-weight: bold;
     font-size: 24px;
 }
+
+
+/* YOUTUBE */
+
+.videos {
+    padding: 5% 0%;
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.1);
+}
+
+.videos li {
+    margin-bottom: 3%;
+}
+
+iframe {
+    border-radius: 25px;
+}

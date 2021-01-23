@@ -18,6 +18,6 @@
     </script>';
     $home_url='http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']).'/discussion.php';
     print_r($home_url);
-    header('refresh: 5; url='.$home_url);
+    header('refresh: 0; url='.$home_url);
 
 ?>

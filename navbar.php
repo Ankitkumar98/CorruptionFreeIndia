@@ -23,7 +23,7 @@
                         <li><a class="active" href="./index.html">Home</a></li>
                         <li><a href="./logout.php">SignOut</a></li>
                         <li>Welcome'.$username.'</li>
-                        <li><a href="https://github.com/Ankitkumar98/DIGIBADGE">Contact</a></li>
+                        <li><a href="https://github.com/Ankitkumar98/CorruptionFreeIndia">Contact</a></li>
                     </ul>';
                 }
                 else
@@ -31,7 +31,7 @@
                 echo '<ul>
                         <li><a class="active" href="./index.html">Home</a></li>
                         <li><a id="sign" style="cursor:pointer;">SignIn/SignUp</a></li>
-                        <li><a href="https://github.com/Ankitkumar98/DIGIBADGE">Contact</a></li>
+                        <li><a href="https://github.com/Ankitkumar98/CorruptionFreeIndia">Contact</a></li>
                     </ul>';
                 }
             ?>
@@ -61,12 +61,6 @@
         </div>
         <div id="prizes">
             <div style="width:500%;">
-                <!-- <div style="display:table;width:1027%;margin:0 auto;font-size: 30px;">
-                    <ul style="list-style:none;display:table-row;">
-                        <li style="display:table-cell;padding-left:40%;padding-top:10.5%;font-weight:bolder;background-color:red;"><a href="#tab-1" style="color:white;">SignIn</a></li>
-                        <li style="display:table-cell;padding-left:5%;padding-top:10.5%;font-weight:bolder;background-color:orange;"><a href="#tab-2" style="color:white;">Register</a></li>  
-                    </ul>
-                </div> -->
                 <ul>
                     <li style="display:inline-block;float:center;margin-right:30px;font-size:30px;margin-left:63%;margin-top:17.6%;"><a href="#tab-1" style="color:white;outline:none;">SignIn</a></li>
                     <li style="display:inline-block;float:center;margin-right:30px;font-size:30px;margin-left:8%;margin-top:17.6%;"><a href="#tab-2" style="color:white;outline:none;">Register</a></li>
@@ -99,7 +93,7 @@
                 <div class="center">
                     <div class="register_center">
                         <h1>Register</h1>
-                        <form method="POST" action="./user-signup.php">
+                        <form method="POST" action="./user-signup.php?location=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>">
                             <div class="register_txt_field">
                                 <input type="text" name="register_name" required />
                                 <span></span>

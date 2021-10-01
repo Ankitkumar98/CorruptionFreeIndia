@@ -60,7 +60,7 @@
             z-index: 3;">+
         </div>
         <div id="prizes">
-            <div style="width:500%;">
+            <div class="heading" >
                 <ul>
                     <li style="display:inline-block;float:center;margin-right:30px;font-size:30px;margin-left:63%;margin-top:17.6%;"><a href="#tab-1" style="color:white;outline:none;">SignIn</a></li>
                     <li style="display:inline-block;float:center;margin-right:30px;font-size:30px;margin-left:8%;margin-top:17.6%;"><a href="#tab-2" style="color:white;outline:none;">Register</a></li>

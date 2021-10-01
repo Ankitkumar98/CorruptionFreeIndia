@@ -38,7 +38,7 @@ nav ul li a {
 }
 /* changes made */
 a.active,
-nav ul li a:hover {            
+nav ul li a:hover {
   background: #1b9bff;
   transition: 0.5s;
 }
@@ -93,4 +93,26 @@ nav ul li a:hover {
   #check:checked ~ ul {
     left: 0;
   }
+}
+
+#tab-1 {
+  background-color: yellow;
+}
+
+#tab-2 {
+  background-color: purple;
+}
+
+.heading {
+  display: grid;
+  place-items: center;
+  width: calc(100% - 72px);
+  align-items: center;
+  justify-content: initial;
+  position: absolute;
+  transform: translateX(-90px);
+}
+
+.heading > ul {
+  display: flex;
 }

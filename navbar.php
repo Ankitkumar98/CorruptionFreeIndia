@@ -22,7 +22,7 @@
                     echo '<ul>
                         <li><a class="active" href="./index.html">Home</a></li>
                         <li><a href="./logout.php">SignOut</a></li>
-                        <li>Welcome'.$username.'</li>
+                        <li>Welcome '.$username.'</li>
                         <li><a href="https://github.com/Ankitkumar98/CorruptionFreeIndia">Contact</a></li>
                     </ul>';
                 }

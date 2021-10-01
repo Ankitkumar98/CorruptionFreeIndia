@@ -14,7 +14,8 @@
             $threaddesc = mysqli_real_escape_string($dbc,trim($_GET['questionDescription']));
             $insert_query = "INSERT INTO threads(`thread_title`,`thread_desc`,`thread_user_id`,`thread_category`) VALUES('$threadtitle','$threaddesc','$userid',1)";
             mysqli_query($dbc,$insert_query) or die("error in posting query");
-            echo 'post successfull';
+            $home_url = "./discussion.php";
+            header('refresh: 0; url='.$home_url);
         }
     }
 ?>
@@ -118,7 +119,7 @@
         ?>
         
         <div class="askQuestionForm" id="askQuestionForm">
-            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="GET">
                 <label class="questionTitleLabel" for="questionTitle">Question Title</label>
                 <input class="questionTitleBox" type="text" id="questionTitle" name="questionTitle" placeholder="Question Title ...">
 
@@ -185,5 +186,10 @@
 </body>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
-<script src="js/discussion.js"></script>    
+<script src="js/discussion.js"></script> 
+<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>   
 </html>

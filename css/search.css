@@ -423,5 +423,9 @@ form input:focus {
   padding-left:3%;
 }
 
+.question:hover {
+  cursor: pointer;
+} 
+
 
 /* search styling ends here */

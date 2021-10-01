@@ -50,7 +50,7 @@
                     <li><a class="active" href="./index.html">Home</a></li>
                     <li><a  href="./discussion.php">Discussion</a></li>
                     <li><a href="./logout.php">SignOut</a></li>
-                    <li>Welcome'.$username.'</li>
+                    <li>Welcome '.$username.'</li>
                     <li><a href="https://github.com/Ankitkumar98/DIGIBADGE">Contact</a></li>
                 </ul>';
             }
@@ -254,10 +254,10 @@
                 <?php
                     $query = 'SELECT * FROM threads';
                     $queryResult = mysqli_query($dbc,$query) or die("error in fetching details from threads table");
-                    echo '<div class="questions">';
+                    echo '<div class="questions"  style=" padding-left:15px;">';
                     while($row = mysqli_fetch_array($queryResult))
                     {
-                        echo '<a href = "./threads.php?th_id='.$row['thread_id'].'"><label for="quesTitle">'.$row['thread_title'].'</label></a>';
+                        echo '<a href = "./threads.php?th_id='.$row['thread_id'].'"><label class="question" for="quesTitle">'.$row['thread_title'].'</label></a><br>';
 
                     }
                     

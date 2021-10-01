@@ -141,12 +141,12 @@
                     <h2>Links</h2>
                     <hr width="50%">
                     <ul class="box">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="corruption_laws.html">Corruption Laws In India</a></li>
-                        <li><a href="initiatives_globally.html">Anti-Corruption Initiatives</a></li>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./corruption_laws.html">Corruption Laws In India</a></li>
+                        <li><a href="./initiatives_globally.html">Anti-Corruption Initiatives</a></li>
                         <!-- <li><a href="initiatives_regionally.html">Anti-Corruption Initiatives (Regionally)</a></li> -->
-                        <li><a href="complaint_against_corrupt.html">How to file a complaint against the corrupt</a></li>
-                        <li><a href="http://localhost/corruption/discussion.php">Discussion Forum</a></li>
+                        <li><a href="./complaint_against_corrupt.html">How to file a complaint against the corrupt</a></li>
+                        <li><a href="./discussion.php">Discussion Forum</a></li>
                     </ul>
                 </li>
                 <li class="features">

@@ -1,8 +1,6 @@
 <?php
         session_start();
         require('dbconnect.php');
-        // echo "entered php";
-        // echo $_GET['search'];
         if(isset($_GET['search']))
         {
             $text = mysqli_real_escape_string($dbc,trim($_GET['search']));
